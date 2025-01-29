@@ -1,0 +1,250 @@
+The Babysitter - Coded Hints
+
+Read the questions in the area where you are stuck. Each question is followed by a list of numbers. Look up the numbers in the dictionary at the end. Convert the numbers to words to find a clue or solution.
+
+
+Living Room
+-----------
+Can't leave house?
+  15 57 68
+
+Can't find coin?
+  12 25 55
+
+Still can't find coin?
+  60 34 52
+
+
+Lower Hall
+----------
+Can't clean dusty floor?
+  22 41 44 59
+
+Still can't clean dusty floor?
+  66 26
+
+Still can't clean dusty floor?
+  26 75 50 26
+
+
+Bottom of Stairwell
+-------------------
+Stairs are too dark to climb?
+  17 71 62 59
+
+Stairs are still too dark to climb?
+  26 49 75
+
+Stairs are still too dark to climb?
+  32 69
+
+
+Dining Room
+-----------
+Can't make phone call?
+  32 39 38
+
+Can't answer phone?
+  57 73 8 53
+
+Still can't answer phone?
+  2 72 78 36 8
+
+
+Kitchen
+-------
+Can't open laundry door?
+  66 13
+
+Can't find key?
+  17 71 62 59
+
+Still can't find key?
+  21 58
+
+Still can't find key?
+  40 28
+
+Still can't open laundry door?
+  54 20 50 13 43 58
+
+
+Laundry
+-------
+Can't use washing machine?
+  21 73
+
+Still can't use washing machine?
+  66 31 64 51 18
+
+Can't find anything to wash in washing machine?
+  12 16
+
+Still can't use washing machine?
+  63 73 65 3 5 1 61 73 65 46 73 65 29 56
+
+Can't find use for mop?
+  26 49 75 50 73
+
+
+Upper Hall
+----------
+Can't open storeroom door?
+  17 71 62 59
+
+Still can't open storeroom door?
+  40 70
+
+Still can't open storeroom door?
+  11 7 50 30
+
+
+Master Bedroom
+--------------
+Can't figure out what to do here?
+  5 1 23 18
+
+Can't open closet door?
+  21 77
+
+Still can't open closet door?
+  66 9
+
+Can't find lubricant?
+  47 4
+
+Still can't open closet door?
+  19 9 42 77
+
+
+Bathroom
+--------
+Can't figure out what to do here?
+  17 71 62
+
+Still can't figure out what to do here?
+  40 70
+
+
+Storeroom
+---------
+Can't see in dark?
+  24 69
+
+Can't find lubricant?
+  21 14
+
+Still can't find lubricant?
+  48 14
+
+
+Closet
+------
+Not sure what to do here?
+  79 27
+
+Can't find use for broom?
+  6 10
+
+Still can't find use for broom?
+  74 33 53
+
+
+General
+-------
+Can't find Anna?
+  47 35 45
+
+Still can't find Anna?
+  47 76 37
+
+Found Anna, but haven't won?
+  79 27
+
+Found Anna, but still haven't won?
+  3 27 61 35 67
+
+Finished, but haven't achieved full score?
+  40 28 65 26 75 65 40 70 65 40 1 65 3 27 61 35 67
+
+============================================================
+
+ 1. CLOTHES
+ 2. ANSWER
+ 3. PUT
+ 4. STOREROOM
+ 5. DIRTY
+ 6. PLAY
+ 7. LOCK
+ 8. RINGING
+ 9. LUBRICANT
+10. QUIDDITCH
+11. PICK
+12. LOOK
+13. KEY
+14. JUNK
+15. GOAL
+16. UPSTAIRS
+17. DO
+18. WASHING
+19. SPRAY
+20. DOOR
+21. EXAMINE
+22. GO
+23. NEED
+24. REMEMBER
+25. UNDER
+26. MOP
+27. ANNA
+28. DISHES
+29. PRESS
+30. HAIRPIN
+31. SOMETHING
+32. READ
+33. BROOM
+34. ISN'T
+35. HER
+36. IT'S
+37. ROOMS
+38. BOARD
+39. MESSAGE
+40. WASH
+41. TO
+42. ON
+43. FROM
+44. LAUNDRY
+45. BEDROOM
+46. CLOSE
+47. CHECK
+48. SEARCH
+49. DUSTY
+50. WITH
+51. NEEDS
+52. ONE
+53. ?
+54. UNLOCK
+55. COUCH
+56. BUTTON
+57. IS
+58. SINK
+59. FIRST
+60. THERE
+61. IN
+62. HOUSEWORK
+63. OPEN
+64. THAT
+65. ,
+66. FIND
+67. BED
+68. INSIDE
+69. NOTE
+70. BASIN
+71. SOME
+72. PHONE
+73. IT
+74. WHAT
+75. FLOOR
+76. LOCKED
+77. LATCH
+78. WHEN
+79. GET

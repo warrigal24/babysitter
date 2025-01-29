@@ -1,0 +1,2097 @@
+!% -~S
+!% $OMIT_UNUSED_ROUTINES=1
+!% $OMIT_SYMBOL_TABLE=1
+!% $ZCODE_LESS_DICT_DATA=1
+!% $MAX_ABBREVS=96
+!========================================
+! The Babysitter
+! Copyright © 2024 Garry Francis
+!========================================
+!Constant DEBUG;
+
+Abbreviate "Latchfree lubricant";           !     6x, saved    87
+Abbreviate "cartoon characters";            !     6x, saved    78
+Abbreviate " John H Doolittle";             !     4x, saved    51
+Abbreviate "washing machine";               !     6x, saved    63
+Abbreviate "You'll have to ";               !     8x, saved   102
+Abbreviate "You could try ";                !     8x, saved    89
+Abbreviate " to the north";                 !     8x, saved    73
+Abbreviate "dirty clothes";                 !     9x, saved    84
+Abbreviate "description";                   !     7x, saved    51
+Abbreviate "currently ";                    !     6x, saved    36
+Abbreviate "You can't ";                    !    27x, saved   258
+Abbreviate "hand basin";                    !     6x, saved    36
+Abbreviate "Mrs Graham";                    !    13x, saved   118
+Abbreviate "direction";                     !    10x, saved    61
+Abbreviate "abysitter";                     !     6x, saved    33
+Abbreviate " already ";                     !    18x, saved   117
+Abbreviate " anything";                     !    12x, saved    75
+Abbreviate "ranscript";                     !     6x, saved    33
+Abbreviate "storeroom";                     !    10x, saved    61
+Abbreviate "tairwell";                      !    10x, saved    51
+Abbreviate " little ";                      !     7x, saved    33
+Abbreviate "nothing ";                      !    15x, saved    81
+Abbreviate "yourself";                      !     7x, saved    33
+Abbreviate " in the ";                      !    32x, saved   183
+Abbreviate " of the ";                      !    18x, saved    99
+Abbreviate " to the ";                      !    19x, saved   105
+Abbreviate "ing the ";                      !    20x, saved   111
+Abbreviate "This is";                       !    17x, saved    93
+Abbreviate "laundry";                       !    10x, saved    41
+Abbreviate ". You ";                        !    19x, saved   105
+Abbreviate "Graham";                        !    10x, saved    41
+Abbreviate " floor";                        !    12x, saved    42
+Abbreviate "essage";                        !     9x, saved    30
+Abbreviate " latch";                        !    14x, saved    50
+Abbreviate " your ";                        !    22x, saved    82
+Abbreviate "ommand";                        !    11x, saved    38
+Abbreviate " with";                         !    28x, saved    78
+Abbreviate " that";                         !    57x, saved   165
+Abbreviate "close";                         !    39x, saved   111
+Abbreviate " you ";                         !    74x, saved   216
+Abbreviate " door";                         !    46x, saved   132
+Abbreviate " Anna";                         !    28x, saved   106
+Abbreviate "thing";                         !    34x, saved    96
+Abbreviate "house";                         !    20x, saved    54
+Abbreviate " and ";                         !    81x, saved   237
+Abbreviate " the ";                         !   120x, saved   354
+Abbreviate "clean";                         !    15x, saved    39
+Abbreviate " some";                         !    21x, saved    57
+Abbreviate "ould ";                         !    16x, saved    42
+Abbreviate ", but";                         !    15x, saved    54
+Abbreviate ". The";                         !    25x, saved   116
+Abbreviate "again";                         !    12x, saved    30
+Abbreviate " of ";                          !    42x, saved    78
+Abbreviate " the";                          !    57x, saved   108
+Abbreviate "It's";                          !    39x, saved   150
+Abbreviate " whe";                          !    19x, saved    32
+Abbreviate "ight";                          !    27x, saved    48
+Abbreviate "ter ";                          !    24x, saved    42
+Abbreviate "lock";                          !    43x, saved    80
+Abbreviate " is ";                          !    49x, saved    92
+Abbreviate "have";                          !    31x, saved    56
+Abbreviate "You'";                          !    34x, saved   130
+Abbreviate "room";                          !    28x, saved    50
+Abbreviate "tion";                          !    19x, saved    32
+Abbreviate "_to/";                          !    12x, saved    42
+Abbreviate " to ";                          !   109x, saved   212
+Abbreviate "n't ";                          !    49x, saved   141
+Abbreviate ".^* ";                          !    11x, saved    68
+Abbreviate " you";                          !    27x, saved    48
+Abbreviate "not ";                          !    28x, saved    50
+Abbreviate "ing ";                          !    94x, saved   182
+Abbreviate "You ";                          !    78x, saved   228
+Abbreviate "open";                          !    20x, saved    34
+Abbreviate " do";                           !    42x, saved    39
+Abbreviate "The";                           !    46x, saved    86
+Abbreviate "'s ";                           !    62x, saved   118
+Abbreviate "ver";                           !    35x, saved    32
+Abbreviate "for";                           !    36x, saved    33
+Abbreviate "all";                           !    51x, saved    48
+Abbreviate "out";                           !    39x, saved    36
+Abbreviate " a ";                           !    62x, saved    59
+Abbreviate "ent";                           !    28x, saved    25
+Abbreviate " be";                           !    51x, saved    48
+Abbreviate "ed.";                           !    32x, saved    58
+Abbreviate " on";                           !    49x, saved    46
+Abbreviate "ing";                           !    49x, saved    46
+Abbreviate " it";                           !    70x, saved    67
+Abbreviate " in";                           !    66x, saved    63
+Abbreviate "re ";                           !    70x, saved    67
+Abbreviate ".^^";                           !    17x, saved    62
+Abbreviate "the";                           !    48x, saved    45
+Abbreviate "It ";                           !    22x, saved    38
+Abbreviate "ust";                           !    31x, saved    28
+Abbreviate "e.";                            !    45x, saved    42
+Abbreviate ". ";                            !    85x, saved    82
+Abbreviate ", ";                            !    96x, saved    93
+
+Constant Story "The Babysitter";
+#Ifv5;
+Zcharacter table + '@{A9}'; !Add copyright symbol
+Constant Headline "^Copyright @{A9} 2024 Garry Francis^Based on 'Midnight Emergency' by John H Doolittle^https://drdooriddle.itch.io/^Type ABOUT for further info and credits.^^";
+#Ifnot;
+Constant Headline "^Copyright (c) 2024 Garry Francis^Based on 'Midnight Emergency' by John H Doolittle^https://drdooriddle.itch.io/^Type ABOUT for further info and credits.^^";
+#Endif;
+
+Array UUID_ARRAY string "UUID://06b54322-0c71-4f20-95b0-99798e9d5b8c//";
+#Ifdef UUID_ARRAY;
+#Endif;
+
+Release 1;
+Serial "240319";
+
+!Inform 6 constants
+Constant AMUSING_PROVIDED;
+Constant DEATH_MENTION_UNDO;
+Constant MAX_CARRIED = 10;
+Constant MAX_SCORE = 100;
+Constant NUMBER_TASKS = 5;
+Constant TASKS_PROVIDED;
+
+Array task_scores -> 20 20 20 20 20;
+
+!PunyInform constants
+Constant CUSTOM_ABBREVIATIONS;
+Constant OPTIONAL_EXTENDED_METAVERBS;
+Constant OPTIONAL_EXTENDED_VERBSET;
+Constant OPTIONAL_FULL_DIRECTIONS;
+Constant OPTIONAL_FULL_SCORE;
+#Ifv5;
+Constant OPTIONAL_PROVIDE_UNDO;
+#Endif;
+Constant RUNTIME_ERRORS 0;!0 for release, 2 for debug
+
+!PunyInform static messages
+Constant MSG_ATTACK_DEFAULT "Temper, temper.";
+Constant MSG_DIG_NO_USE "You can't go around digging in someone else's house.";
+Constant MSG_JUMP "Come back down to earth.";
+Constant MSG_PARSER_NO_INPUT "You need to enter a command.";
+Constant MSG_PARSER_UNKNOWN_VERB "That's not a verb I recognise.";
+Constant MSG_PRAY_DEFAULT "You pray that Anna is okay.";
+Constant MSG_SHOUT_DEFAULT "Your shout echoes through the house.";
+Constant MSG_SING_DEFAULT "Please don't go on 'America's Got Talent', as you don't have any.";
+Constant MSG_SMELL_DEFAULT "You can't smell anything out of the ordinary.";
+Constant MSG_SORRY_DEFAULT "Oh, don't apologise.";
+Constant MSG_STRONG_DEFAULT "That's not very lady-like.";
+Constant MSG_TAKE_STATIC "In your dreams.";
+Constant MSG_THINK_DEFAULT "You think about tomorrow's history test. You should have been studying instead of browsing through Facegram and Instabook.";
+
+!PunyInform dynamic messages
+Constant MSG_CLOSE_NOT_OPEN 1000;
+Constant MSG_LOCK_ALREADY_LOCKED 1001;
+Constant MSG_LOCK_CLOSE_FIRST 1002;
+Constant MSG_LOCK_KEY_DOESNT_FIT 1003;
+Constant MSG_UNLOCK_ALREADY_UNLOCKED 1004;
+Constant MSG_UNLOCK_KEY_DOESNT_FIT 1005;
+
+Constant MSG_LISTEN_DEFAULT 1006;
+Constant MSG_SLEEP_DEFAULT 1007;
+Constant MSG_TAKE_SCENERY 1008;
+
+!Game-specific constants
+Constant ANSWER_PHONE "Answer the telephone. It might be important.";
+Constant HAVE_TO_TELL_ME "You'll have to tell me what to ";
+Constant LATCH_ON_OTHER_SIDE "The latch is on the other side of the door.";
+Constant ONLY_LOCK_FROM_OUTSIDE "You can only lock it from the outside.";
+Constant READ_MESSAGE_BOARD "Read the message board.";
+Constant READ_NOTE "Read the note.";
+Constant REMEMBER_NOTE "Remember what it said on the note?";
+Constant STAIRS_THAT_WAY "The stairs are in that direction.";
+Constant TOO_DARK_IN_STAIRWELL "It's too dark to see in the stairwell.";
+Constant WASHING_MACHINE_BEEPS "The washing machine beeps at you. You guess that it can't start while ";
+
+!Game-specific variables
+
+!Replaced actions
+Replace GoSub;
+Replace LockSub;
+Replace UnlockSub;
+
+Include "globals.h";
+
+!========================================
+! Entry point routines
+!========================================
+[ Amusing;
+  "^Have you tried:^* Examining yourself.^* Examining everything in every room, including scenery and the rooms themselves.^* Using CALL, CLAP, DANCE, DIG, JUMP, LISTEN, PRAY, SHOUT, SING, SLEEP, SMELL, SNEEZE, THINK or the magic word XYZZY.^* Looking under the couch and the two beds.^* Entering the couch and the two beds.^* Examining the cartoon characters and the toys in Anna's room.^* Wearing the dirty clothes, the clean clothes and the hairpin.^* Starting the washing machine when it's empty or the lid is open.^* Closing the closet door when you're in the closet.^* Spraying the lubricant on something other than the latch.^* Attacking, kissing, waking or talking to Anna.^* Doing things a second time.";
+];
+
+[ ChooseObjects obj code;
+  if (code < 2)
+  {
+    ! Stage 2: Processing an "all"
+    if (obj has scenery or concealed or static)
+      return 2; !Force exclusion
+    if (action_to_be == ##Drop && (obj notin player || obj has worn))
+      return 2; !Force exclusion
+    if (action_to_be == ##Take && (obj == player || obj in player))
+      return 2; !Force exclusion
+    if (action_to_be == ##Drop or ##Take && obj == anna)
+      return 1; !Force inclusion
+  }
+];
+
+[ DisallowTakeAnimate obj;
+  if (obj == anna)
+    rfalse;
+];
+
+[ LibraryMessages p_msg p_arg_1 p_arg_2;
+  switch (p_msg)
+  {
+    MSG_CLOSE_NOT_OPEN:
+      print_ret (CTheyreOrIts)noun, " already closed.";
+    MSG_LOCK_ALREADY_LOCKED:
+      print_ret (CTheyreOrIts)noun, " already locked.";
+    MSG_LOCK_CLOSE_FIRST:
+      "You'll have to close ", (ItOrThem)noun, " first.";
+    MSG_LOCK_KEY_DOESNT_FIT:
+      print_ret (The)second, " ", (DoesntOrDont)second, " fit the lock.";
+    MSG_UNLOCK_ALREADY_UNLOCKED:
+      print_ret (CTheyreOrIts)noun, " already unlocked.";
+    MSG_UNLOCK_KEY_DOESNT_FIT:
+      print_ret (The)second, " ", (DoesntOrDont)second, " fit the lock.";
+    MSG_LISTEN_DEFAULT:
+      if (telephone hasnt general)
+        "The house is quiet and you like it that way.";
+      print "The telephone is ringing";
+      if (location == room07 or room08 or room09 or room10 or room11 or room12 or room13)
+        print " downstairs, but you can barely hear it from up here";
+      ".";
+    MSG_SLEEP_DEFAULT:
+      print "You had a snooze when you fell asleep on the couch, remember? Now you need to ";
+      if (room13 hasnt visited)
+        "check on Anna.";
+      if (room12 hasnt visited)
+        "find Anna.";
+      "return Anna to her bed.";
+    MSG_TAKE_SCENERY:
+      "You're a babysitter, not a magician.";
+  }
+  p_arg_1 = p_arg_2;
+];
+
+[ PrintTaskName task_number;
+  switch (task_number)
+  {
+    0: "for washing the dirty dishes";
+    1: "for mopping the dusty floor";
+    2: "for washing the dirty hand basin";
+    3: "for washing the dirty clothes";
+    4: "for putting Anna to bed";
+  }
+];
+
+Include "puny.h";
+
+!========================================
+! Initialisation
+!========================================
+[ Initialise;
+  location = room01;
+  lookmode = 2;
+  no_implicit_actions = true;
+  player.description = "You're a teenage girl named Veronica. You do odd jobs like dog walking and babysitting in order to fund your mobile phone addiction. You accidentally left your mobile phone at home and you feel naked and helpless without it.";
+  "Mr and Mrs Graham have gone out to a movie and left you to babysit their young daughter, Anna. What could be easier? Anna is in bed, so you settle down on the living room couch and fall asleep.^^In your sleep, you dream that Mr and Mrs Graham come home and find Anna missing. The police are called, a city-wide search is instigated and you are severely reprimanded...and rightly so. Amid the waves of embarrassment, shame and utter humiliation when everyone makes you look stupid, you suddenly wake up in a cold sweat.^^You look around and see that you're still on the couch and everything seems fine. But is it? You had better check on Anna.^";
+];
+
+!========================================
+! Classes
+!========================================
+Class OpenableContainer
+with
+  invent
+  [;
+    if (inventory_stage == 2 && (self hasnt open || child(self) == 0))
+      rtrue;
+  ],
+has container openable;
+
+Class OpenContainer
+with
+  invent
+  [;
+    if (inventory_stage == 2 && child(self) == 0)
+      rtrue;
+  ],
+has container open;
+
+!========================================
+! Room 1: Living Room
+!========================================
+Object room01 "Living Room"
+with
+  description "You're in the living room of the Graham household. It's cosy and warm, compared to the freezing cold outside the front door to the south. Other rooms are to the north and west.",
+  n_to room05,
+  s_to "If you want to leave the house, you'll have to open the front door.",
+  w_to room02,
+  before
+  [;
+    Hint:
+      if (telephone has general)
+        print_ret (string)ANSWER_PHONE;
+  ],
+has light;
+
+!----------------------------------------
+! Living room
+!----------------------------------------
+Object "living room" room01
+with
+  name 'living' 'room',
+  description "This is where the Grahams live when they're not in other parts of the house.",
+has scenery;
+
+!----------------------------------------
+! Front door
+!----------------------------------------
+Object "front door" room01
+with
+  name 'front' 'door',
+  description "It's the front door to the Graham household. The door is currently closed.",
+  before
+  [;
+    Open:
+      "No way. It's cold outside and you don't want to let the cold air into the cosy living room.";
+  ],
+has openable scenery;
+
+!----------------------------------------
+! House
+!----------------------------------------
+Object "house"
+with
+  name 'house' 'household' 'grahams^',
+  description "This is the Grahams' house. It's simple, but functional, and it's warmer in the house than it is outside.",
+  found_in
+  [;
+    rtrue;
+  ],
+has scenery;
+
+!----------------------------------------
+! Couch
+!----------------------------------------
+Object couch "couch" room01
+with
+  parse_name
+  [ i;
+    while (NextWord() == 'couch' or 'cushy' or 'three-seater' or 'three' or 'seater' or 'black' or 'leather')
+      i++;
+    return i;
+  ],
+  description
+  [;
+    print "It's quite a cushy three-seater couch made from black leather. ";
+    <<Search self>>;
+  ],
+  before
+  [;
+    Enter:
+      if (verb_word == 'lie')
+        "If you lie down, you might fall asleep again.";
+      if (verb_word == 'sit')
+        "You sit down briefly, decide that you're wasting time and stand up again.";
+      "You're in someone else's house. It wouldn't be very polite to stand on their couch with your dirty feet.";
+    LookUnder:
+      "You are sadly disappointed. There's no loose change or lost dollar bills, just dust bunnies.";
+    Pull, Push, Take:
+      "It's too heavy.";
+  ],
+has enterable static supporter;
+
+!========================================
+! Room 2: Dining Room
+!========================================
+Object room02 "Dining Room"
+with
+  description "You're in the dining room, which is located in the southwest corner of the house. There are exits to the north and east.",
+  n_to room03,
+  e_to room01,
+  before
+  [;
+    Call:
+      if (board hasnt general)
+        print_ret (string)READ_MESSAGE_BOARD;
+      else
+        "You've read the message board. Perhaps you need to read it again to refresh your memory.";
+    Hint:
+      if (board hasnt general)
+        print_ret (string)READ_MESSAGE_BOARD;
+      if (telephone has general)
+        print_ret (string)ANSWER_PHONE;
+  ],
+has light;
+
+!----------------------------------------
+! Dining room
+!----------------------------------------
+Object "dining room" room02
+with
+  name 'dining' 'room',
+  description "This is presumably where the Grahams dine.",
+has scenery;
+
+!----------------------------------------
+! Message board
+!----------------------------------------
+Object board "message board" room02
+with
+  name 'board' 'erasable' 'message' 'sign',
+  description
+  [;
+    print "It's one of those erasable message boards where you write messages with a felt-tip pen, then erase them again with a cloth. This one is presumably used to jot down messages from the phone. Someone has left a message on it.";
+    if (self hasnt general)
+      print " It might be worth reading it to see what it says.";
+    "";
+  ],
+  before
+  [;
+    Read:
+      give self general;
+      "It says, 'INCOMING CALLS ONLY'.";
+    Take:
+      "It's stuck to the wall.";
+  ],
+has static;
+
+!----------------------------------------
+! Telephone
+!----------------------------------------
+Object telephone "telephone" room02
+with
+  name 'telephone' 'phone' 'push-button' 'wall',
+  description "It's a push-button wall phone, so called because it has push buttons and it's mounted on the wall.",
+  before
+  [;
+    Answer, Take:
+      if (self hasnt general)
+        "Why would you want to do that? It's not ringing.";
+      give self ~general;
+      StopDaemon(self);
+      print "It's Mrs Graham. She says, ~Hello, Veronica. Just checking to make sure everything's alright.~ You assure her that it is";
+      if (room12 hasnt visited)
+        print ", knowing full well that it isn't";
+      ". ~Good. We're going to have a quick bite to eat. We'll be home soon. See you then.~";
+  ],
+  daemon
+  [;
+    if (location == room01 or room02 or room03 or room04 or room05 or room06)
+      "^The phone is ringing. You'd better answer it in case it's Mr or Mrs Graham.";
+  ],
+has static;
+
+!========================================
+! Room 3: Kitchen
+!========================================
+Object room03 "Kitchen"
+with
+  description "You're in the kitchen. The laundry door is to the north and other exits are to the south and east.",
+  n_to laundry_door,
+  s_to room02,
+  e_to room05,
+  before
+  [;
+    Hint:
+      if (dirty_dishes in nothing)
+        "Examine the sink.";
+      if (key in nothing)
+        "You could try washing the dishes.";
+      if (key hasnt moved)
+        "What's in the sink?";
+      if (room04 hasnt visited && laundry_door has locked)
+        "Try unlocking the laundry door.";
+      if (room04 hasnt visited && laundry_door hasnt open)
+        "Try opening the laundry door.";
+      if (room04 hasnt visited)
+        "What's behind the laundry door?";
+      if (telephone has general)
+        print_ret (string)ANSWER_PHONE;
+    Smell:
+      "You smell a vague hint of the earlier evening meal.";
+  ],
+has light;
+
+!----------------------------------------
+! Kitchen
+!----------------------------------------
+Object "kitchen" room03
+with
+  name 'kitchen',
+  description "This is no doubt where the Grahams cook their meals, except when they're eating out (like tonight) or ordering takeaway.",
+has scenery;
+
+!----------------------------------------
+! Laundry door (floating object)
+!----------------------------------------
+Object laundry_door "laundry door"
+with
+  parse_name
+  [ nw i flag;
+    nw = NextWord();
+    while (nw == 'laundry' or 'door')
+    {
+      i++;
+      if (nw == 'laundry' && location == room04)
+        flag++;
+      nw = NextWord();
+    }
+    if (i == flag)
+      return 0;
+    return i;
+  ],
+  description
+  [;
+    print "This is the laundry door. It's currently ";
+    if (self has open)
+      "open.";
+    else
+      "closed.";
+  ],
+  door_dir
+  [;
+    if (self in room03)
+      return n_to;
+    else
+      return s_to;
+  ],
+  door_to
+  [;
+    if (self in room03)
+      return room04;
+    else
+      return room03;
+  ],
+  before
+  [;
+    Lock:
+      if (self in room04)
+        print_ret (string)ONLY_LOCK_FROM_OUTSIDE;
+  ],
+  with_key key,
+  found_in room03 room04,
+has door lockable locked openable static;
+
+!----------------------------------------
+! Sink
+!----------------------------------------
+Object sink "sink" room03
+class OpenContainer
+with
+  parse_name
+  [ nw i flag;
+    nw = NextWord();
+    while (nw == 'typical' or 'stainless' or 'steel' or 'kitchen' or 'sink')
+    {
+      i++;
+      if (nw == 'kitchen')
+        flag++;
+      nw = NextWord();
+    }
+    if (i == flag)
+      return 0;
+    return i;
+  ],
+  description
+  [;
+    if (dirty_dishes in nothing)
+      move dirty_dishes to sink;
+    print "It's a typical stainless steel kitchen sink. ";
+    <<Search self>>;
+  ],
+  before
+  [;
+    Receive:
+      if (noun == anna or dirty_clothes or clean_clothes or mop)
+        print_ret (The)noun, " won't fit in the sink.";
+  ],
+has container open static;
+
+!----------------------------------------
+! Dirty dishes
+!----------------------------------------
+Object dirty_dishes "dirty dishes"
+with
+  name 'dirty' 'dish' 'dishes//p',
+  description "They look really disgusting. You gather that Mr and Mrs Graham had to rush out and didn't have time to do the washing up. You sort of feel obligated to wash them up yourself.",
+  before
+  [;
+    Rub:
+      move self to limbo;
+      move clean_dishes to sink;
+      move key to sink;
+      Achieved(0);
+      "You scrub and scrub the dirty dishes until they're sparkling clean. Nice job. Ooh, you find something in the bottom of the sink.";
+    Take:
+      "No thank you. They're all dirty.";
+  ],
+has pluralname static;
+
+!----------------------------------------
+! Sparkling clean dishes
+!----------------------------------------
+Object clean_dishes "sparkling clean dishes"
+with
+  name 'sparkling' 'clean' 'dish' 'dishes//p',
+  description "They're sparkling clean now. You did a really good job on them.",
+  before
+  [;
+    Rub:
+      "You're not going to get them any cleaner.";
+    Take:
+      "You'd be better off leaving the dishes in the sink where Mrs Graham can see them. It might earn you some brownie points.";
+  ],
+has pluralname static;
+
+!----------------------------------------
+! Key
+!----------------------------------------
+Object key "key"
+with
+  name 'key' 'small',
+  description "It's a small key, perhaps to a door.",
+has;
+
+!========================================
+! Room 4: Laundry
+!========================================
+Object room04 "Laundry"
+with
+  description "You're in the confined space of the laundry. The exit is via the laundry door to the south.",
+  s_to laundry_door,
+  before
+  [;
+    Hint:
+      if (clean_clothes in nothing)
+        "You could try doing the washing.";
+      if (telephone has general)
+        print_ret (string)ANSWER_PHONE;
+    Smell:
+      "You smell a vague hint of laundry liquid.";
+  ],
+has light;
+
+!----------------------------------------
+! Laundry
+!----------------------------------------
+Object "laundry" room04
+with
+  name 'laundry' 'confined' 'space',
+  description "This is no doubt where the Grahams wash their clothes.",
+has scenery;
+
+!----------------------------------------
+! Washing machine
+!----------------------------------------
+Object machine "washing machine" room04
+class OpenableContainer
+with
+  name 'top-loading' 'washing' 'machine' 'lid',
+  description
+  [;
+    print "It's a top-loading washing machine and it looks like one of the latest models. You just put the dirty clothes in the machine and press the START button and it automatically works out the appropriate water level, washing cycle and so on. ";
+    <<Search self>>;
+  ],
+  before
+  [;
+    Pull, Push, Take:
+      "You can't be serious! It weighs a ton. Well, maybe not a ton, but it weighs a lot.";
+    Receive:
+      if (noun == clean_clothes)
+        "You've already washed them. There's no point washing them a second time.";
+      if (noun ~= dirty_clothes)
+        "The washing machine is for dirty clothes. You can't just toss any old thing in there.";
+    SwitchOff:
+      "It's not on.";
+    SwitchOn:
+      "Tell me how.";
+  ],
+has container openable static;
+
+!----------------------------------------
+! START button
+!----------------------------------------
+Object button "START button" room04
+with
+  name 'start' 'button',
+  description "It's a big green button that says, 'START'.",
+  before
+  [;
+    Push:
+      if (machine has open)
+        print_ret (string)WASHING_MACHINE_BEEPS, "the lid's open.";
+      if (child(machine) == 0)
+        print_ret (string)WASHING_MACHINE_BEEPS, "it's empty.";
+      if (clean_clothes in machine)
+        "You've already washed the clothes. They're not going to get any cleaner.";
+      move dirty_clothes to limbo;
+      move clean_clothes to machine;
+      Achieved(3);
+      give telephone general;
+      StartDaemon(telephone);
+      "The washing machine starts up. You can hear the water pouring in, then the agitator kicks into life and washes the clothes. When that's finished, you hear the dirty water empty out and more clean water pouring in. This is followed by a rinse cycle and a spin cycle and the machine beeps to tell you that it's finished. Wow, that was easy.";
+  ],
+has scenery;
+
+!----------------------------------------
+! Clean clothes
+!----------------------------------------
+Object clean_clothes "clean clothes"
+with
+  name 'clean' 'clothes//p',
+  description "They're lovely and fresh.",
+  before
+  [;
+    Wear:
+      print "You have a bit of fun playing 'dress-ups' in Mrs Graham's clothes, but Mr Graham's clothes aren't your size. This isn't helping you to ";
+      if (room12 hasnt visited && room13 hasnt visited)
+        "check up an Anna.";
+      if (room12 hasnt visited)
+        "find Anna.";
+      "return Anna to her room.";
+  ],
+has clothing pluralname;
+
+!----------------------------------------
+! Mop
+!----------------------------------------
+Object mop "mop" room04
+with
+  parse_name
+  [ i;
+    while (NextWord() == 'mop' or 'modern' or 'fangled' or 'synthetic' or 'fibre')
+      i++;
+    return i;
+  ],
+  description "It's one of those modern fangled mops where the strings have been replaced by some sort of synthetic fibre that's really good at mopping up dust.",
+has;
+
+!========================================
+! Room 5: Lower Hall
+!========================================
+Object room05 "Lower Hall"
+with
+  description "You're in the lower hall of the house. It has exits to the north, south and west.",
+  n_to room06,
+  s_to room01,
+  w_to room03,
+  before
+  [;
+    Hint:
+      if (note in nothing)
+        "You could try mopping the floor.";
+      if (note hasnt general)
+        print_ret (string)READ_NOTE;
+      if (telephone has general)
+        print_ret (string)ANSWER_PHONE;
+    Smell:
+      if (dust in location)
+        "It smells dusty.";
+  ],
+has light;
+
+!----------------------------------------
+! Lower hall
+!----------------------------------------
+Object "lower hall" room05
+with
+  parse_name
+  [ i;
+    while (NextWord() == 'lower' or 'hall' or 'hallway' or 'ground' or 'floor')
+      i++;
+    return i;
+  ],
+  description "This is the lower hall, so named because it's lower than the upper hall.",
+has scenery;
+
+!----------------------------------------
+! Dust
+!----------------------------------------
+Object dust "dust" room05
+with
+  article "some",
+  name 'dust' 'floor',
+  initial "The floor is covered with dust.",
+  description "The floor is dusty. I mean REALLY dusty! You feel compelled to mop it up.",
+  before
+  [;
+    Blow:
+      "You just create a cloud of dust that quickly settles back on the floor. You will need to mop it up if you expect to get rid of it.";
+    Rub:
+      if (second == nothing && mop in player)
+      {
+        print "(with the mop)^";
+        second = mop;
+      }
+      if (second == nothing)
+        print_ret (string)HAVE_TO_TELL_ME, (address)verb_word, " it with.";
+      if (second ~= mop)
+        "You can't ", (address)verb_word, " it with ", (ThatOrThose)second, ".";
+      remove dust;
+      move note to location;
+      Achieved(1);
+      "You scrub the floor with the mop until all the dust is gone. In the process, you uncover a note.";
+    Take:
+      <<Sneeze>>;
+  ],
+has static;
+
+!----------------------------------------
+! Note
+!----------------------------------------
+Object note "note"
+with
+  name 'note',
+  description
+  [;
+    print "It's a yellow Post-It note";
+    if (self hasnt moved)
+      print ", which explains why it's stuck to the floor, but not how it got there";
+    print ". There's something written on it.";
+    if (self hasnt general)
+      print " It might be worth reading it.";
+    "";
+  ],
+  before
+  [;
+    Read:
+      give self general;
+      "It says, 'CLAP to turn on lights'.";
+  ],
+has;
+
+!========================================
+! Room 6: Bottom of Stairwell
+!========================================
+Object room06 "Bottom of Stairwell"
+with
+  description "You're at the bottom of the stairwell that goes up to the first floor. The only other exit is to the south.",
+  n_to STAIRS_THAT_WAY,
+  s_to room05,
+  u_to
+  [;
+    if (stairwell hasnt light)
+      print_ret (string)TOO_DARK_IN_STAIRWELL;
+    else
+      return room07;
+  ],
+  before
+  [;
+    Hint:
+      if (stairwell hasnt light && note in nothing)
+        "You could try doing some housework before venturing upstairs.";
+      if (stairwell hasnt light && note hasnt general)
+        print_ret (string)READ_NOTE;
+      if (stairwell hasnt light)
+        print_ret (string)REMEMBER_NOTE;
+      if (telephone has general)
+        print_ret (string)ANSWER_PHONE;
+  ],
+has light;
+
+!----------------------------------------
+! Bottom of stairwell
+!----------------------------------------
+Object "bottom of the stairwell" room06
+with
+  parse_name
+  [ nw i flag;
+    nw = NextWord();
+    while (nw == 'bottom' or 'of' or 'the' or 'stairwell' or 'staircase' or 'stair' or 'stairs//p')
+    {
+      i++;
+      if (nw == 'stairwell' or 'staircase' or 'stair' or 'stairs//p')
+        flag++;
+      nw = NextWord();
+    }
+    if (i == flag)
+      return 0;
+    return i;
+  ],
+has scenery;
+
+!----------------------------------------
+! Stairwell (floating object)
+!----------------------------------------
+Object stairwell "stairwell"
+with
+  name 'stairwell' 'staircase' 'stair' 'stairs//p',
+  description
+  [;
+    print "The stairwell goes ";
+    if (self in room06)
+      print "up to the first";
+    else
+      print "down to the ground";
+    print " floor";
+    if (self hasnt light)
+      print ", but it's too dark to see";
+    ".";
+  ],
+  react_before
+  [;
+    Clap:
+      print "The light in the stairwell goes ";
+      if (self has light)
+      {
+        give self ~light;
+        "off.";
+      }
+      give self light;
+      "on.";
+  ],
+  before
+  [;
+    Climb, Enter:
+      if (self in room06)
+        <<Go FAKE_U_OBJ>>;
+      else
+        <<Go FAKE_D_OBJ>>;
+  ],
+  found_in room06 room07,
+has scenery;
+
+!========================================
+! Room 7: Top of Stairwell
+!========================================
+Object room07 "Top of Stairwell"
+with
+  description "You're at the top of the stairwell that goes down to the ground floor. The rest of the first floor is to the north.",
+  n_to room08,
+  s_to STAIRS_THAT_WAY,
+  d_to
+  [;
+    if (stairwell hasnt light)
+      print_ret (string)TOO_DARK_IN_STAIRWELL;
+    else
+      return room06;
+  ],
+  before
+  [;
+    Hint:
+      if (stairwell hasnt light && note in nothing)
+        "You could try doing some housework downstairs before venturing any further.";
+      if (stairwell hasnt light && note hasnt general)
+        print_ret (string)READ_NOTE;
+      if (stairwell hasnt light)
+        print_ret (string)REMEMBER_NOTE;
+  ],
+has light;
+
+!----------------------------------------
+! Top of stairwell
+!----------------------------------------
+Object "top of the stairwell" room07
+with
+  parse_name
+  [ nw i flag;
+    nw = NextWord();
+    while (nw == 'top' or 'of' or 'the' or 'stairwell' or 'staircase' or 'stair' or 'stairs//p')
+    {
+      i++;
+      if (nw == 'stairwell' or 'staircase' or 'stair' or 'stairs//p')
+        flag++;
+      nw = NextWord();
+    }
+    if (i == flag)
+      return 0;
+    return i;
+  ],
+has scenery;
+
+!========================================
+! Room 8: Upper Hall
+!========================================
+Object room08 "Upper Hall"
+with
+  description "You're in the upper hall. The storeroom door is to the north and there are other exits to the south, east and west.",
+  n_to storeroom_door,
+  s_to room07,
+  e_to room13,
+  w_to room09,
+  before
+  [;
+    Hint:
+      if (pin in nothing)
+        "If you can't unlock the storeroom door, try doing some housework and come back later.";
+      if (room11 hasnt visited && storeroom_door has locked)
+        "Hairpins can be used for more than just pinning your hair back.";
+      if (room11 hasnt visited && storeroom_door hasnt open)
+        "Try opening the storeroom door.";
+  ],
+has light;
+
+!----------------------------------------
+! Upper hall
+!----------------------------------------
+Object "upper hall" room08
+with
+  article "an",
+  parse_name
+  [ i;
+    while (NextWord() == 'upper' or 'hall' or 'hallway' or 'first' or 'floor')
+      i++;
+    return i;
+  ],
+  description "This is the upper hall, so named because it's upper than the lower hall. Hang on, 'upper' isn't the right word. English is a stupid language.",
+has scenery;
+
+!----------------------------------------
+! Storeroom door (floating object)
+!----------------------------------------
+Object storeroom_door "storeroom door"
+with
+  parse_name
+  [ nw i flag;
+    nw = NextWord();
+    while (nw == 'storeroom' or 'door')
+    {
+      i++;
+      if (nw == 'storeroom' && location == room11)
+        flag++;
+      nw = NextWord();
+    }
+    if (i == flag)
+      return 0;
+    return i;
+  ],
+  description
+  [;
+    print "This is the storeroom door. It has a small lock. The door is currently ";
+    if (self has open)
+      "open.";
+    else
+      "closed.";
+  ],
+  door_dir
+  [;
+    if (self in room08)
+      return n_to;
+    else
+      return s_to;
+  ],
+  door_to
+  [;
+    if (self in room08)
+      return room11;
+    else
+      return room08;
+  ],
+  before
+  [;
+    Lock:
+      if (self in room11 && self hasnt open)
+        "The lock is on the other side of the door.";
+    Unlock:
+      if (self hasnt locked)
+      {
+        PrintMsg(MSG_UNLOCK_ALREADY_UNLOCKED);
+        rtrue;
+      }
+      if (second == nothing && key in player)
+      {
+        print "(with the key)^";
+        second = key;
+      }
+      if (second == pin && pin in player && self has locked)
+        "The hairpin is not a key, but this gives you an idea. You might be able to pick the lock with it.";
+  ],
+  with_key dummy_key,
+  found_in room08 room11,
+has door lockable locked openable static;
+
+!----------------------------------------
+! Lock (floating object)
+!----------------------------------------
+Object lock "lock"
+with
+  name 'lock' 'small',
+  description
+  [;
+    if (self in room11 && storeroom_door hasnt open)
+      "It's on the other side of the door.";
+    print "It's the lock to the storeroom door.";
+    if (storeroom_door has locked)
+      print " If you can't find the key, you may have to pick the lock.";
+    "";
+  ],
+  before
+  [;
+    Lock:
+      if (storeroom_door has open)
+        "You'll have to close the door first.";
+      <<Lock storeroom_door>>;
+    Pick:
+      if (storeroom_door hasnt locked)
+        "It's not locked.";
+      if (second == nothing && pin in player)
+      {
+        print "(with the hairpin)^";
+        second = pin;
+      }
+      if (second == nothing)
+        "You'll have to tell me what to pick the lock with.";
+      if (second ~= pin)
+        "You can't pick the lock with ", (ThatOrThose)second, ".";
+      if (pin has worn)
+        "That's not so easy when it's in your hair.";
+      give storeroom_door ~locked;
+      "You've never done this before, but you've seen it done on TV plenty of times. How hard can it be? You put the hairpin in the lock and fiddle with it for at least ten minutes until it eventually clicks. Whew! It looked much easier on TV.";
+    Unlock:
+      if (storeroom_door hasnt locked)
+        "It's already unlocked.";
+      if (second == pin)
+        <<Pick self pin>>;
+      else
+        <<Unlock storeroom_door second>>;
+  ],
+  found_in room08 room11,
+has scenery;
+
+!========================================
+! Room 9: Master Bedroom
+!========================================
+Object room09 "Master Bedroom"
+with
+  description "You're in the master bedroom. There's a closet door to the north and other exits to the south and east.",
+  n_to closet_door,
+  s_to room10,
+  e_to room08,
+  before
+  [;
+    Hint:
+      if (dirty_clothes in self)
+        "You could try picking up the dirty clothes.";
+      if (clean_clothes in nothing)
+        "You could try washing the dirty clothes.";
+      if (room12 hasnt visited && closet_door has locked)
+        "If you can't unlock the closet door, then you may need to lubricate the latch.";
+      if (room12 hasnt visited && closet_door hasnt open)
+        "Try opening the closet door.";
+      if (room12 hasnt visited)
+        "What's in the closet?";
+  ],
+has light;
+
+!----------------------------------------
+! Master bedroom
+!----------------------------------------
+Object "master bedroom" room09
+with
+  name 'master' 'bedroom',
+  description "This is the love nest of Mr and Mrs Graham.",
+has scenery;
+
+!----------------------------------------
+! Closet door (floating object)
+!----------------------------------------
+Object closet_door "closet door"
+with
+  parse_name
+  [ nw i flag;
+    nw = NextWord();
+    while (nw == 'stained' or 'wood' or 'closet' or 'door')
+    {
+      i++;
+      if (nw == 'closet' && location == room12)
+        flag++;
+      nw = NextWord();
+    }
+    if (i == flag)
+      return 0;
+    return i;
+  ],
+  description
+  [;
+    print "It's a stained wood door with horizontal louvres that allow air to get into the closet. The front of the door has a latch that is currently ";
+    if (self has locked)
+      print "locked";
+    else
+      print "unlocked";
+    print ". The door itself is ";
+    if (self has open)
+      "open.";
+    else
+      "closed.";
+  ],
+  door_dir
+  [;
+    if (self in room09)
+      return n_to;
+    else
+      return s_to;
+  ],
+  door_to
+  [;
+    if (self in room09)
+      return room12;
+    else
+      return room09;
+  ],
+  before
+  [;
+    Close:
+      if (self in room12)
+        "You'd better not close the door while you're in the closet or you might get locked in, the same way Anna did.";
+    Lock:
+      if (self has locked)
+        "It's already locked.";
+      if (self has open)
+        "You'll have to close it first.";
+      if (self in room12)
+        print_ret (string)ONLY_LOCK_FROM_OUTSIDE;
+      give self locked;
+      "You close the latch to lock the closet door.";
+    Spray:
+      if (second == nothing && lubricant in player)
+      {
+        print "(with the Latchfree lubricant)^";
+        <<PutOn lubricant self>>;
+      }
+    Unlock:
+      if (self hasnt locked)
+        "It's already unlocked.";
+      if (latch hasnt general)
+        "The latch is stuck. You'll have to spray it with something to lubricate it.";
+      give self ~locked;
+      "You open the latch to unlock the closet door.";
+  ],
+  add_to_scope louvres,
+  with_key dummy_key,
+  found_in room09 room12,
+has door lockable locked openable static;
+
+!----------------------------------------
+! Louvres
+!----------------------------------------
+Object louvres "louvres"
+with
+  parse_name
+  [ i;
+    while (NextWord() == 'horizontal' or 'louvre' or 'louvres' or 'louver' or 'louvers' or 'slat' or 'slats')
+      i++;
+    return i;
+  ],
+  description "The louvres allow air to circulate through the closet so that it doesn't get musty.",
+has pluralname scenery;
+
+!----------------------------------------
+! Latch (floating object)
+!----------------------------------------
+Object latch "latch"
+with
+  name 'latch' 'lock' 'simple' 'cam',
+  description
+  [;
+    print "It's a simple cam latch that works by turning it 90 degrees clockwise to lock the door and anti-clockwise to unlock the door. The latch is currently ";
+    if (closet_door has locked)
+      print "closed";
+    else
+      print "open";
+    print " so that the closet door is ";
+    if (closet_door has locked)
+      "locked.";
+    else
+      "unlocked.";
+  ],
+  before
+  [;
+    if (location == room12 && closet_door hasnt open)
+      print_ret (string)LATCH_ON_OTHER_SIDE;
+    Close, Lock:
+      if (closet_door has locked)
+        "It's already closed so that the closet door is locked.";
+      <<Lock closet_door>>;
+    Open, Unlock:
+      if (closet_door hasnt locked)
+        "It's already open so that the closet door is unlocked.";
+      <<Unlock closet_door>>;
+    Spray:
+      if (second == nothing && lubricant in player)
+      {
+        print "(with the Latchfree lubricant)^";
+        second = lubricant;
+      }
+      if (second == nothing)
+        print_ret (string)HAVE_TO_TELL_ME, (address)verb_word, " it with.";
+      if (second ~= lubricant)
+        "You can't ", (address)verb_word, " it with ", (ThatOrThose)second, ".";
+      print "You ", (address)verb_word, " it with ";
+      if (latch has general)
+        print "more ";
+      give latch general;
+      print "lubricant.";
+      if (closet_door has locked)
+        print " You should be able to unlock the door now.";
+      "";
+    Turn:
+      if (closet_door has open)
+        "You'll have to close the door first.";
+      if (closet_door has locked)
+        <<Unlock closet_door>>;
+      else
+        <<Lock closet_door>>;
+  ],
+  found_in room09 room12,
+has scenery;
+
+!----------------------------------------
+! Queen-sized bed
+!----------------------------------------
+Object queen_bed "queen-sized bed" room09
+class OpenContainer
+with
+  name 'bed' 'queen-sized' 'queen' 'sized',
+  description
+  [;
+    print "This is the bed of Mr and Mrs Graham. ";
+    <<Search self>>;
+  ],
+  before
+  [;
+    Enter:
+      "Ooh, I dunno, it just feels wrong getting into someone else's bed.";
+    LookUnder:
+      "Nope, no sign of Anna under there.";
+    Receive:
+      if (noun == anna)
+        "This is not Anna's bed.";
+  ],
+has static supporter;
+
+!----------------------------------------
+! Dirty clothes
+!----------------------------------------
+Object dirty_clothes "dirty clothes" room09
+with
+  name 'dirty' 'clothes//p',
+  description
+  [;
+    print "It's an assortment of dirty clothes.";
+    if (self hasnt moved)
+      print " It looks like Mr and Mrs Graham must have got changed and left in a hurry.";
+    "";
+  ],
+  before
+  [;
+    Wear:
+      "You want to wear someone else's dirty clothes? That's a bit kinky, isn't it?";
+  ],
+has clothing pluralname;
+
+!========================================
+! Room 10: Bathroom
+!========================================
+Object room10 "Bathroom"
+with
+  description "You're in the bathroom. The exit is to the north.",
+  n_to room09,
+  before
+  [;
+    Hint:
+      if (pin in nothing)
+        "You could try washing the hand basin.";
+      if (pin hasnt moved)
+        "What's in the hand basin?";
+  ],
+has light;
+
+!----------------------------------------
+! Bathroom
+!----------------------------------------
+Object "bathroom" room10
+with
+  name 'bathroom' 'grahams^' 'bath',
+  description "This is the Grahams' bathroom. Interestingly, there's no bath.",
+has scenery;
+
+!----------------------------------------
+! Hand basin
+!----------------------------------------
+Object basin "hand basin" room10
+class OpenContainer
+with
+  name 'porcelain' 'hand' 'basin',
+  description
+  [;
+    print "It's a porcelain hand basin that's ";
+    if (self hasnt general)
+      print "filthy dirty. You should really clean it. ";
+    else
+      print "sparkling clean. You should be proud of that. ";
+    <<Search self>>;
+  ],
+  before
+  [;
+    Receive:
+      if (noun == anna or dirty_clothes or clean_clothes or mop)
+        print_ret (The)noun, " won't fit in the hand basin.";
+    Rub:
+      if (self has general)
+        "You've already cleaned it. You'd be wasting your time to clean it again.";
+      give self general;
+      move pin to self;
+      Achieved(2);
+      "You give the basin a really thorough clean until it sparkles. In the process, you find something in the bottom of the basin.";
+  ],
+has container open static;
+
+!----------------------------------------
+! Hairpin
+!----------------------------------------
+Object pin "hairpin"
+with
+  name 'hairpin' 'hair' 'pin' 'bobby',
+  description
+  [;
+    print "It's a lady's hairpin that's used for pinning your hair back.";
+    if (self hasnt moved)
+      print " Mrs Graham must have dropped it.";
+    "";
+  ],
+  after
+  [;
+    Wear:
+      "You pin your hair back, not that you really needed to.";
+  ],
+has clothing;
+
+!========================================
+! Room 11: Storeroom
+!========================================
+Object room11 "Storeroom"
+with
+  description "You're in the storeroom. It doesn't have a window, so it's very dark and musty from lack of air circulation. The exit is via the door to the south.",
+  s_to storeroom_door,
+  before
+  [;
+    Clap:
+      print "The light in the storeroom goes ";
+      if (self has light)
+      {
+        give self ~light;
+        print "off.^^";
+        PlayerTo(self);
+        rtrue;
+      }
+      give self light;
+      "on.^";
+    Hint:
+      if (self hasnt light)
+        print_ret (string)REMEMBER_NOTE;
+      if (lubricant in nothing)
+        "A pile of junk can hide all sorts of goodies.";
+    Smell:
+      "It smells musty.";
+  ],
+has;
+
+!----------------------------------------
+! Storeroom
+!----------------------------------------
+Object "storeroom" room11
+with
+  name 'storeroom',
+  description "Every house has a storeroom and this one is no different, although your own house has an attic in the roof cavity.",
+has scenery;
+
+!----------------------------------------
+! Pile of junk
+!----------------------------------------
+Object "pile of junk" room11
+with
+  parse_name
+  [ i;
+    while (NextWord() == 'pile' or 'of' or 'junk' or 'rubbish' or 'garbage' or 'trash' or 'assorted' or 'household' or 'items' or 'broken' or 'furniture' or 'old' or 'sporting' or 'equipment')
+      i++;
+    return i;
+  ],
+  description
+  [;
+    print "It's a pile of assorted household items, including broken furniture and old sporting equipment.";
+    if (lubricant in nothing)
+      print " It might be worth a more thorough search to see if there's anything interesting.";
+    "";
+  ],
+  before
+  [;
+    Search:
+      print "You search through the junk ";
+      if (lubricant notin nothing)
+        "again, but don't find anything else of interest.";
+      move lubricant to location;
+      "and find a bottle of lubricant. That could come in handy.";
+  ],
+has static;
+
+!----------------------------------------
+! Bottle of Latchfree lubricant
+!----------------------------------------
+Object lubricant "bottle of Latchfree lubricant"
+with
+  name 'bottle' 'of' 'latchfree' 'lubricant',
+  description "It's a bottle of Latchfree lubricant with a spray nozzle. The brand name says it all. You clearly spray it on latches to free them up when they're stuck.",
+  before
+  [;
+    PutOn:
+      if (second == nothing && latch in location)
+      {
+        print "(on the latch)^";
+        second = latch;
+      }
+      if (second == nothing)
+        print_ret (string)HAVE_TO_TELL_ME, (address)verb_word, " it on.";
+      if (second == closet_door)
+        "You'd have better luck spraying it on the latch.";
+      if (second ~= latch)
+        "Er, it's called 'Latchfree lubricant', not '", (name)second, " free lubricant'.";
+      if (location == room12 && closet_door hasnt open)
+        print_ret (string)LATCH_ON_OTHER_SIDE;
+      print "You ", (address)verb_word;
+      if (latch has general)
+        print " more";
+      give latch general;
+      " lubricant on the latch. It should open easily now.";
+  ],
+has;
+
+!========================================
+! Room 12: Closet
+!========================================
+Object room12 "Closet"
+with
+  description "You're in the bedroom closet. It's quite claustrophobic. If you want to get out (and you do), the closet door is to the south.",
+  s_to closet_door,
+  before
+  [;
+    Hint:
+      "You've found Anna. Try putting her back to bed where she belongs.";
+  ],
+has light;
+
+!----------------------------------------
+! Closet
+!----------------------------------------
+Object "closet" room12
+with
+  name 'closet',
+  description "The closet is used to store linen, but you have no interest in that.",
+has scenery;
+
+!----------------------------------------
+! Anna
+!----------------------------------------
+Object anna "Anna" room12
+with
+  parse_name
+  [ i;
+    while (NextWord() == 'anna' or 'sweet' or 'little' or 'girl' or 'curly' or 'blonde' or 'hair')
+      i++;
+    return i;
+  ],
+  description
+  [;
+    print "Anna is a sweet little girl with curly blonde hair. She's sleeping peacefully, completely unaware of the worry that she's caused you.";
+    if (self hasnt moved)
+      print " You wonder how she got into the closet and locked herself in. You assume that the latch must have closed when she shut the door, thus locking her in.";
+    "";
+  ],
+  life
+  [;
+    Answer, Ask, Talk, Tell:
+      "Shush, she's asleep.";
+    Attack:
+      "Bashing up little girls is not in the job description for a babysitter.";
+    Give, Show:
+      "She's not likely to pay any attention while she's asleep.";
+    Kiss:
+      "You give her a little peck on the cheek. She certainly is a cutie.";
+    WakeOther:
+      "If you wake her, you might not get her back to sleep again, so you'd better leave her to sleep in peace.";
+  ],
+  react_before
+  [;
+    Shout, ShoutAt:
+      "Shush. You'll wake Anna.";
+  ],
+  before
+  [;
+    Drop:
+      "I don't think it's wise to drop a little girl on the floor, as you might hurt her or wake her up. You should put her in her bed.";
+  ],
+has animate female proper;
+
+!========================================
+! Room 13: Small Bedroom
+!========================================
+Object room13 "Small Bedroom"
+with
+  description "You're in a small bedroom that you know to be Anna's room. It's clearly a child's bedroom, as it's decorated in bright colours and cartoon characters. The exit is to the west.",
+  w_to room08,
+  before
+  [;
+    Hint:
+      if (room12 hasnt visited)
+        "Find Anna!";
+      "Try putting Anna back into her bed.";
+  ],
+has light;
+
+!----------------------------------------
+! Small bedroom
+!----------------------------------------
+Object "small bedroom" room13
+with
+  parse_name
+  [ i;
+    while (NextWord() == 'small' or 'bedroom' or 'anna^s' or 'room' or 'child^s' or 'decor' or 'bright' or 'colour' or 'colours' or 'color' or 'colors')
+      i++;
+    return i;
+  ],
+  description "You don't have time to admire the decor. Your only concern is getting Anna back into bed before her parents come home.",
+has scenery;
+
+!----------------------------------------
+! Cartoon characters
+!----------------------------------------
+Object "cartoon characters" room13
+with
+  parse_name
+  [ i;
+    while (NextWord() == 'cartoon' or 'cartoons' or 'character' or 'characters' or 'girlie' or 'disney')
+      i++;
+    return i;
+  ],
+  description "They're all very girlie Disney cartoon characters, most before your time. You recognise Snow White, Sleeping Beauty, Tinker Bell, Alice in Wonderland, Cinderella in her ball gown and several others.",
+has pluralname scenery;
+
+!----------------------------------------
+! Individual cartoon characters
+!----------------------------------------
+Object "individual cartoon characters" room13
+with
+  parse_name
+  [ i;
+    while (NextWord() == 'snow' or 'white' or 'sleeping' or 'beauty' or 'tinker' or 'bell' or 'alice' or 'in' or 'wonderland' or 'cinderella' or 'ball' or 'gown')
+      i++;
+    return i;
+  ],
+  description "The individual cartoon characters are done in pretty pastel colours.",
+has pluralname scenery;
+
+!----------------------------------------
+! Single bed
+!----------------------------------------
+Object single_bed "single bed" room13
+with
+  parse_name
+  [ i;
+    while (NextWord() == 'single' or 'bed' or 'anna^s' or 'small' or 'child-sized' or 'child' or 'sized' or 'sheet' or 'sheets')
+      i++;
+    return i;
+  ],
+  description
+  [;
+    print "This is Anna's bed. It's a small, child-sized bed. The sheets are rumpled, indicating that Anna has been sleeping in it, but she's no longer there. ";
+    <<Search self>>;
+  ],
+  before
+  [;
+    Enter:
+      "The bed is too small for you.";
+    LookUnder:
+      if (toys in nothing)
+        move toys to location;
+      "Anna is not hiding under the bed, but a few toys are. You'd better leave them there in case Woody or Buzz Lightyear come looking for them.";
+    Receive:
+      if (noun ~= anna)
+        "I don't think you should be putting anything in or on Anna's bed, except for Anna, of course.";
+      Achieved(4);
+      deadflag = 2;
+      print "You carefully place Anna in her bed and pull the sheets over her. The little scallywag doesn't know how much trauma she caused you. You give her a little peck on the cheek and say, ~Nighty night. Don't let the bed bugs bite.~^^You tip-toe out of her bedroom and return to the living room, just as a car comes up the driveway. Mr and Mrs Graham are home. When they come in the front door, they're all smiles. Unlike you, they must have had a good night. ~Good evening Veronica. Any trouble?~^^~No, not at all. She was an angel~, you lie.^^Mrs Graham inspects the house and ";
+      if (score < 100)
+        "looks a little disappointed. She doesn't say anything, but you can tell that she must have expected you to do more cleaning. She hands over your fee and Mr Graham drives you home. Maybe you can do better next time.";
+      else
+        "marvels at how clean it is. ~Goodness, gracious me, you have been busy.~ She hands over your fee and gives you an extra $10. ~I'm going to nominate you for Babysitter of the Year.~^^Congratulations. Job well done.";
+  ],
+has static supporter;
+
+!----------------------------------------
+! Toys
+!----------------------------------------
+Object toys "toys"
+with
+  parse_name
+  [ i;
+    while (NextWord() == 'toy' or 'toys' or 'cabbage' or 'patch' or 'doll' or 'slinky' or 'mister' or 'mr' or 'potato' or 'head' or 'missing' or 'ear')
+      i++;
+    return i;
+  ],
+  description "You get down on your haunches to examine the toys under the bed. There's a Cabbage Patch doll, a slinky and a Mr Potato Head with a missing ear.",
+  before
+  [;
+    Take:
+      "This is no time for playing with toys.";
+  ],
+has pluralname scenery;
+
+!========================================
+! Limbo
+!========================================
+Object limbo;
+
+!----------------------------------------
+! Dummy key
+!----------------------------------------
+Object dummy_key;
+
+!========================================
+! Printing rules
+!========================================
+[ consultWord word i;
+  for (i=0:i<WordLength(word):i++)
+    print (char)LowerCase(WordAddress(word)->i);
+];
+
+[ DoesntOrDont obj;
+  if (obj has pluralname)
+    print "don't";
+  else
+    print "doesn't";
+];
+
+[ firstConsultWord word i;
+  for (i=0:i<WordLength(word):i++)
+    if (i == 0)
+      print (char)UpperCase(WordAddress(word)->i);
+    else
+      print (char)LowerCase(WordAddress(word)->i);
+];
+
+!========================================
+! Other routines
+!========================================
+[ LowerCase c; ! for ZSCII matching ISO 8859-1
+  switch (c)
+  {
+    'A' to 'Z': c = c + 32;
+    202, 204, 212, 214, 221: c--;
+    217, 218: c = c - 2;
+    158 to 160, 167, 168, 208 to 210: c = c - 3;
+    186 to 190, 196 to 200: c = c - 5 ;
+    175 to 180: c = c - 6;
+  }
+  return c;
+];
+
+[ UpperCase c; ! for ZSCII matching ISO 8859-1
+  switch (c)
+  {
+    'a' to 'z': c = c - 32;
+    201, 203, 211, 213, 220: c++;
+    215, 216: c = c + 2;
+    155 to 157, 164, 165, 205 to 207: c = c + 3;
+    181 to 185, 191 to 195: c = c + 5 ;
+    169 to 174: c = c + 6;
+  }
+  return c;
+];
+
+!========================================
+! Grammar
+!========================================
+Extend only 'answer' first
+  * noun -> Answer;
+
+Extend only 'clear' replace
+  * noun -> Rub;
+
+Extend 'dig' first
+  * -> Dig;
+
+Extend 'lock' first
+  * noun -> Lock;
+
+Extend 'look'
+  * 'into' noun -> Search
+  * 'under' noun -> LookUnder;
+
+Extend 'pick' first
+  * noun -> Pick
+  * noun 'with' noun -> Pick;
+
+Extend 'pry' replace
+  * noun -> Pry
+  * noun 'with' held -> Pry
+  * 'apart'/'open' noun 'with' held -> Pry
+  * noun 'apart'/'open' 'with' held -> Pry;
+
+Extend 'read' first
+  * noun -> Read;
+
+Extend 'rub'
+  * noun 'with' held -> Rub;
+
+Extend 'say' first
+  * topic -> Say;
+
+Extend only 'speak' replace
+  * -> Talk
+  * creature -> Talk
+  * noun -> Talk
+  * 'to'/'with' creature -> Talk
+  * 'to'/'with' noun -> Talk
+  * 'to'/'with' creature 'about' topic -> Ask
+  * 'to'/'with' noun 'about' topic -> Ask;
+
+Extend 'unlock' first
+  * noun -> Unlock;
+
+Verb meta 'about' 'info'
+  * -> About;
+
+Verb 'dance'
+  * -> Dance;
+
+Verb 'call' 'dial' 'phone' 'ring' 'telephone'
+  * -> Call
+  * topic -> Call;
+
+Verb 'clap'
+  * -> Clap
+  * 'hands' -> Clap;
+
+Verb meta 'credits'
+  * -> Credits;
+
+Verb meta 'help' 'instructions'
+  * -> Help;
+
+Verb 'hint' 'clue'
+  * -> Hint;
+
+Verb 'holler' = 'scream';
+
+Verb 'inspect' = 'examine';
+
+Verb 'lubricate' 'grease' 'oil'
+  * noun -> Spray
+  * noun 'with' noun -> Spray;
+
+Verb 'sneeze'
+  * -> Sneeze
+  * 'aloud'/'loudly' -> Sneeze;
+
+Verb 'spray' 'squirt'
+  * noun -> Spray
+  * noun 'with' noun -> Spray
+  * noun 'on'/'onto' noun -> PutOn;
+
+Verb 'talk' 'babble' 'chat' 'communicate' 'converse' 'gab' 'gossip'
+  * -> Talk
+  * creature -> Talk
+  * noun -> Talk
+  * 'to'/'with' creature -> Talk
+  * 'to'/'with' noun -> Talk
+  * 'to'/'with' creature 'about' topic -> Ask
+  * 'to'/'with' noun 'about' topic -> Ask;
+
+Verb 'use'
+  * noun -> Use;
+
+Verb 'wash' 'mop' 'rinse' = 'rub';
+
+Verb 'xyzzy' 'plover' 'plugh' 'yoho'
+  * -> MagicWord;
+
+!========================================
+! Actions
+!========================================
+[ AboutSub;
+  print "This game was originally known as 'Midnight Emergency'. It was written in Turbo BASIC for IBM-compatible PCs by John H Doolittle circa 1989 and used in his 'Scientific Thinking in Psychology' classes when he was a professor of psychology at California State University, Sacramento.^^It was ported to ZBasic by Eric Thornton and published by Critical Thinking Press as game 2 in the 'Adventures in Danger!' trilogy. This was released for the Apple II and Macintosh in 1992.^^John continued to update the game until 1996 and released the Turbo BASIC source code in 2023. This was ported to Inform 6 by Garry Francis using the PunyInform library. It was then enhanced in collaboration with the original author to become 'The Babysitter'.^^";
+  <<Credits>>;
+];
+
+[ CallSub;
+  "Who ya gonna call? Ghostbusters!";
+];
+
+[ ClapSub;
+  "Clap, clap, clap.";
+];
+
+[ CreditsSub;
+  "Original concept by John H Doolittle.^Game design and coding by Garry Francis.^Play testing by Audrey Lee, Jade J Aincioa, John H Doolittle and Timur Ozturk.";
+];
+
+[ DanceSub;
+  "You drag out your best John Travolta impersonation.";
+];
+
+[ GoSub _prop;
+  if (selected_direction == ne_to or nw_to or se_to or sw_to)
+    "There are no diagonal directions in this game.";
+  _prop = selected_direction;
+#Iftrue RUNTIME_ERRORS > RTE_MINIMUM;
+  if (_prop == 0)
+    return _RunTimeError(ERR_INVALID_DIR_PROP);
+#Endif;
+  return GoDir(_prop);
+];
+
+[ HelpSub;
+  print "Tell me what to do using simple commands starting with a verb.^^Use LOOK (or L) to refresh the location description. Identify all the objects in the description and EXAMINE (or X) each one. Read responses carefully for hints.^^Use compass directions (N, S, E, W, U and D) to move around. Draw a map as you go.^^Use GET or TAKE to take objects and DROP to drop them again. Use INVENTORY (or I) to see what you're carrying.^^Use AGAIN (or G) to repeat the last command.^^";
+#Ifv5;
+  print "Use UNDO to undo the last command if you make a mistake.^^";
+#Endif;
+  "Use SCORE to get your current score and number of turns taken. Use FULLSCORE to get your score and a list of the tasks that you've achieved.^^Use SAVE to save the game and RESTORE to restore it again.^^There are over 100 verbs that you can use, so if something doesn't work, try a different verb or a different way of doing things. Use HINT if you get stuck.^^For full instructions, see the game's home page at https://drdooriddle.itch.io/babysitter/.";
+];
+
+[ HintSub;
+  "There's nothing to do here at the moment. Make sure you examine everything you find and draw a map.";
+];
+
+[ LockSub k;
+  if (ObjectIsUntouchable(noun))
+    return;
+  if (noun hasnt lockable)
+  {
+    PrintMsg(MSG_LOCK_NOT_A_LOCK, 'lock');
+    rtrue;
+  }
+  if (noun has locked)
+  {
+    PrintMsg(MSG_LOCK_ALREADY_LOCKED);
+    rtrue;
+  }
+  if (noun has open)
+  {
+    PrintMsg(MSG_LOCK_CLOSE_FIRST);
+    rtrue;
+  }
+  k = RunRoutines(noun, with_key);
+  if (k == nothing)
+    "You can't see how to lock ", (ItOrThem)noun, ".";
+  if (second == nothing && k ~= nothing && k in player)
+  {
+    second = k;
+    print "(with ", (the)second, ")^";
+  }
+  if (second == nothing)
+    "You don't have the key.";
+  if (second ~= k)
+  {
+    PrintMsg(MSG_LOCK_KEY_DOESNT_FIT);
+    rtrue;
+  }
+  give noun locked;
+  run_after_routines_msg = MSG_LOCK_DEFAULT;
+  run_after_routines_arg_1 = 'lock';
+];
+
+[ LookUnderSub;
+  if (location == thedark)
+    "But it's dark.";
+  "You find nothing of interest.";
+];
+
+[ MagicWordSub;
+  "Anything would be more exciting than babysitting, so you mutter a magic word, hoping that something exciting will happen. You are sadly disappointed. Oh, well. It was worth a try.";
+];
+
+[ PickSub;
+  if (ObjectIsUntouchable(noun))
+    return;
+  "You can't pick that.";
+];
+
+[ PrySub;
+  if (ObjectIsUntouchable(noun))
+    return;
+  if (AfterRoutines() == 1)
+    rtrue;
+  if (keep_silent == 1)
+    rtrue;
+  "You can't pry ", (ThatOrThose)noun, " apart.";
+];
+
+[ ReadSub;
+  if (ObjectIsUntouchable(noun, true))
+    "I suppose you read tea leaves, too";
+  "There's nothing legible on ", (ThatOrThose)noun, ".";
+];
+
+[ SaySub i;
+  if (consult_words == 0)
+    "You have nothing to say.";
+  print "~";
+  i = consult_from;
+  print (firstConsultWord)i++;
+  while (i < consult_from + consult_words)
+    print " ", (consultWord)i++;
+  print ".~^^";
+  if (AfterRoutines())
+    return;
+  wn = consult_from;
+  if (consult_words == 1 && NextWord() == 'xyzzy' or 'plover' or 'plugh' or 'yoho')
+    <<MagicWord>>;
+  "Nothing happens.";
+];
+
+[ SneezeSub;
+  "~Achoo!~";
+];
+
+[ SpraySub;
+  if (noun == nothing)
+    print_ret (string)HAVE_TO_TELL_ME, (address)verb_word, ".";
+  if (second == nothing)
+  {
+    if (TestScope(lubricant) && ~~ObjectIsUntouchable(lubricant, true))
+    {
+      second = lubricant;
+      print "(with the can of Latchfree lubricant)^";
+    }
+    else
+      print_ret (string)HAVE_TO_TELL_ME, (address)verb_word, " ", (ItOrThem)noun, " with.";
+  }
+  if (second ~= lubricant)
+    "You can't ", (address)verb_word, " anything with ", (ThatOrThose)second, ".";
+  if (noun == second)
+    "You can't ", (address)verb_word, " it with itself.";
+  if (AfterRoutines() || keep_silent == 1)
+    rtrue;
+  "You ", (address)verb_word, " ", (the)noun, " with ", (the)second, ", but it doesn't do anything.";
+];
+
+[ TalkSub;
+  if (noun == nothing)
+    "You start talking to no one in particular.";
+  if (noun == player)
+    "You start talking to yourself, but it's a one-sided conversation.";
+  if (RunLife(noun, ##Talk))
+    rtrue;
+  print_ret (The)noun, " ", (IsOrAre)noun, " not very talkative.";
+];
+
+[ UnlockSub k;
+  if (ObjectIsUntouchable(noun))
+    return;
+  if (noun hasnt lockable)
+  {
+    PrintMsg(MSG_UNLOCK_NOT_A_LOCK, 'unlock');
+    rtrue;
+  }
+  if (noun hasnt locked)
+  {
+    PrintMsg(MSG_UNLOCK_ALREADY_UNLOCKED, 'unlock');
+    rtrue;
+  }
+  k = RunRoutines(noun, with_key);
+  if (k == nothing)
+    "You can't see how to unlock ", (ItOrThem)noun, ".";
+  if (second == nothing && k ~= nothing && k in player)
+  {
+    second = k;
+    print "(with ", (the)second, ")^";
+  }
+  if (second == nothing)
+    "You don't have the key.";
+  if (second ~= k)
+  {
+    PrintMsg(MSG_UNLOCK_KEY_DOESNT_FIT);
+    rtrue;
+  }
+  give noun ~locked;
+  run_after_routines_msg = MSG_UNLOCK_DEFAULT;
+  run_after_routines_arg_1 = 'unlock';
+];
+
+[ UseSub;
+  if (ObjectIsUntouchable(noun))
+    return;
+  "You'll have to be more explicit than that.";
+];
+
+End;

@@ -1,0 +1,92 @@
+The Babysitter
+By John H Doolittle & Garry Francis
+For Z-code interpreters
+
+Solution by Garry Francis
+----------------------------------------
+This is a minimal solution. You'll need to EXAMINE lots of things for this solution to make sense. Some optional (but significant) commands are shown in parentheses. These can be omitted once you know what to do.
+
+Scores are shown in parentheses as +A=B, where A is points earned and B is cumulative points earned.
+
+W
+N
+X SINK (it's full of dirty dishes)
+WASH DISHES (you find something in the bottom of the sink) (+20=20)
+(L) (it's a key)
+GET KEY
+(N) (door is closed)
+(OPEN DOOR) (it's locked)
+UNLOCK DOOR WITH KEY
+OPEN IT
+N (there's a washing machine and mop here)
+GET MOP
+S
+E (floor is covered with dust)
+(X DUST) (you feel compelled to mop it up)
+MOP FLOOR WITH MOP (you find a note) (+20=40)
+(X NOTE) (there's something written on it)
+READ NOTE (it says, 'CLAP to turn on lights')
+N
+(U) (it's too dark to see in stairwell)
+CLAP (light in stairwell goes on)
+U
+N
+(N) (door is closed)
+(OPEN DOOR) (it's locked)
+(UNLOCK DOOR) (you don't have the right key)
+(X DOOR) (it has a small lock)
+(X LOCK) (you may have to pick the lock)
+(PICK LOCK) (what with?)
+W (there's some dirty clothes here)
+GET CLOTHES
+(N) (closet door is closed)
+(OPEN DOOR) (it's locked)
+(UNLOCK DOOR) (latch is stuck, you'll have to lubricate it)
+S (there's a hand basin here)
+(X BASIN) (it's filthy dirty, you should clean it)
+CLEAN BASIN (you find someting in bottom of basin) (+20=60)
+(L) (it's a hairpin)
+(X HAIRPIN) (Mrs Graham must have dropped it)
+GET HAIRPIN
+N
+E
+S
+D
+S
+W
+N
+(X MACHINE) (it's got a START button, it's closed)
+(PRESS BUTTON) (it can't start while it's empty)
+OPEN MACHINE
+PUT CLOTHES IN IT
+(PRESS BUTTON) (machine beeps at you, you need to close the lid)
+CLOSE MACHINE
+PRESS BUTTON (you wash the clothes, phone starts ringing) (+20=80)
+S
+(S)
+(ANSWER PHONE) (it's Mrs Graham checking up on you)
+(N)
+E
+N
+U
+N
+PICK LOCK WITH HAIRPIN (it's now unlocked)
+OPEN DOOR
+N (it's dark)
+CLAP (the light turns on)
+(X JUNK) (maybe you should search it)
+SEARCH JUNK (you find a can of Latchfree lubricant)
+GET LUBRICANT
+S
+W
+SPRAY LOCK WITH LUBRICANT
+UNLOCK DOOR
+OPEN IT
+N (you find Anna)
+(X ANNA) (she's asleep, you wonder how she locked herself in the closet)
+GET ANNA
+S
+E
+E
+PUT ANNA IN BED (parents come home & reward you for the clean house) (+20=100)
+***THE END***
